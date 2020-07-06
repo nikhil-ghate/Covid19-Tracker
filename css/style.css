@@ -119,21 +119,35 @@ main{
 }
 /* -------- LATEST REPORT -------- */
 .latest-report{
-    /* display: flex;
-    justify-content: space-between; */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* justify-content: space-between; */
+    display: flex;
     width: 80%;
     margin: 0 auto;
     padding-top: 50px;
     
     color: #fff;
 }
+.data{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+    /* justify-content: center; */
+}
+.country{
+    height: 150px;
+    width: 200px;
+}
 
-.country, .total-cases, .recovered, .deaths, .active, .recovery, .fatality{
-    height: 100px;
-    /* justify-self: center; */
+.total-cases, .recovered, .deaths, .active, .recovery, .fatality{
+    height: 150px;
+    width: 150px;
     padding-bottom: 20px;
+}
+
+.total-cases, .recovered, .deaths, .active, .recovery, .fatality{
+    place-self: center;
 }
 
 .name{
@@ -150,9 +164,17 @@ main{
     font-size: 1.3em;
 }
 
+.total-cases{
+    /* justify-content: center; */
+
+}
 .total-cases .value{
     font-size: 2em;
     font-weight: bold;
+}
+
+.active{
+    /* justify-content: end; */
 }
 .active .value{
     font-size: 2em;
@@ -160,8 +182,9 @@ main{
     color: #bbaf0d;
 }
 .recovered {
-    grid-column: 2/3;
     grid-row: 2;
+    
+
 }
 .recovered .value, .recovery .value{
     font-size: 2em;
@@ -170,8 +193,9 @@ main{
 }
 
 .deaths{
-    grid-column: 3/4;
+    /* grid-column: 3/4; */
     grid-row: 2;
+    
 }
 .deaths .value, .fatality .value{
     font-size: 2em;
@@ -179,12 +203,12 @@ main{
     color: #f44336;
 }
 .recovery {
-    grid-column: 2/3;
+    /* grid-column: 2/3; */
     grid-row: 3;
 }
 
 .fatality {
-    grid-column: 3/4;
+    /* grid-column: 3/4; */
     grid-row: 3;
 }
 
@@ -309,7 +333,27 @@ footer{
 @media screen and (max-width: 650px){
     .latest-report{
         display: grid;
+        width: 90%;
         grid-template-columns: auto;
         align-items: flex-start;
+    }
+    .data{
+        padding-top: 40px;
+    }
+    .country{
+        height: 120px;
+        width: 320px;
+    }
+    .total-cases, .recovered, .deaths, .active, .recovery, .fatality{
+        height: 120px;
+        width: 150px;
+        padding-bottom: 20px;
+    }
+    .search-box{
+        width: 300px;
+    }
+    .country-list{
+        width: 300px;
+        height: 200px;
     }
 }
