@@ -350,10 +350,13 @@ footer{
         padding-bottom: 20px;
     }
     .search-box{
-        width: 300px;
+        width: 310px;
     }
     .country-list{
-        width: 300px;
+        width: 310px;
         height: 200px;
+    }
+    .country-list ul li{
+        padding: 5px;
     }
 }
