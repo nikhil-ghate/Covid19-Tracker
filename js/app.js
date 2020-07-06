@@ -6,7 +6,6 @@ const totalCasesElement = document.querySelector(".total-cases .value");
 const newCasesElement = document.querySelector(".total-cases .new-value");
 
 const activeElement = document.querySelector(".active .value");
-const newActiveElement = document.querySelector(".active .new-value")
 
 const recoverdElement = document.querySelector(".recovered .value");
 const newRecoverdElement = document.querySelector(".recovered .new-value");
@@ -43,7 +42,6 @@ function fetchData(userCountry){
 				totalCasesElement.innerHTML = cnt.TotalConfirmed || 0;
 				newCasesElement.innerHTML = `+${cnt.NewConfirmed || 0}`;
 				activeElement.innerHTML = `${cnt.TotalConfirmed - cnt.TotalRecovered - cnt.TotalDeaths || 0}`;
-				newActiveElement.innerHTML = `+${cnt.NewConfirmed - cnt.NewRecovered - cnt.NewDeaths || 0}`;
 				
 				recoverdElement.innerHTML = cnt.TotalRecovered || 0;
 				newRecoverdElement.innerHTML = `+${cnt.NewRecovered || 0}`;
