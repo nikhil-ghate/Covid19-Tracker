@@ -130,9 +130,10 @@ main{
     color: #fff;
 }
 
-.country, .total-cases, .recovered, .deaths{
+.country, .total-cases, .recovered, .deaths, .active, .recovery, .fatality{
     height: 100px;
-    justify-self: center;
+    /* justify-self: center; */
+    padding-bottom: 20px;
 }
 
 .name{
@@ -153,21 +154,38 @@ main{
     font-size: 2em;
     font-weight: bold;
 }
-
-.recovered .value{
+.active .value{
+    font-size: 2em;
+    font-weight: bold;
+    color: #bbaf0d;
+}
+.recovered {
+    grid-column: 2/3;
+    grid-row: 2;
+}
+.recovered .value, .recovery .value{
     font-size: 2em;
     font-weight: bold;
     color: #009688;
 }
 
 .deaths{
-    grid-column: 2/3;
+    grid-column: 3/4;
     grid-row: 2;
 }
-.deaths .value{
+.deaths .value, .fatality .value{
     font-size: 2em;
     font-weight: bold;
     color: #f44336;
+}
+.recovery {
+    grid-column: 2/3;
+    grid-row: 3;
+}
+
+.fatality {
+    grid-column: 3/4;
+    grid-row: 3;
 }
 
 
@@ -290,8 +308,8 @@ footer{
 /* ---------------------------------------------- */
 @media screen and (max-width: 650px){
     .latest-report{
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: auto;
         align-items: flex-start;
     }
 }
