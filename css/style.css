@@ -173,9 +173,6 @@ main{
     font-weight: bold;
 }
 
-.active{
-    /* justify-content: end; */
-}
 .active .value{
     font-size: 2em;
     font-weight: bold;
@@ -193,9 +190,7 @@ main{
 }
 
 .deaths{
-    /* grid-column: 3/4; */
     grid-row: 2;
-    
 }
 .deaths .value, .fatality .value{
     font-size: 2em;
@@ -203,12 +198,10 @@ main{
     color: #f44336;
 }
 .recovery {
-    /* grid-column: 2/3; */
     grid-row: 3;
 }
 
 .fatality {
-    /* grid-column: 3/4; */
     grid-row: 3;
 }
 
@@ -324,11 +317,11 @@ footer{
 }
 
 .copyright p{
-    color: rgb(10, 3, 3);
+    color:#fff;
 }
 
 /* ---------------------------------------------- */
-/*             SCREEN WIDTH < 600px               */
+/*             SCREEN WIDTH < 650px               */
 /* ---------------------------------------------- */
 @media screen and (max-width: 650px){
     .latest-report{

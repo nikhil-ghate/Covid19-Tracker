@@ -24,15 +24,7 @@ let appData = [],
 	deathsList = [],
 	cntList = [];
 
-// console.log(countryNameElement);
-//GET USER COUNTRY CODE
-let countryCode = geoplugin_countryCode();
-let userCountry;
-country_list.forEach( country => {
-	if(country.code === countryCode){
-		userCountry = country.name;
-	}
-});
+let userCountry = 'India';
 
 
 function fetchData(userCountry){
@@ -44,10 +36,8 @@ function fetchData(userCountry){
 	.then( data => {
 		data.Countries.forEach(cnt => {
 			if (cnt.Country === userCountry ) {
-				console.log(cnt);
 				countryNameElement.innerHTML = cnt.Country;
 				const event = new Date(`${cnt.Date}`);
-				console.log(event.toString());
 				updateDate.innerHTML = `Last Updated: ${event.toString()}`;
 				
 				totalCasesElement.innerHTML = cnt.TotalConfirmed || 0;
@@ -60,7 +50,6 @@ function fetchData(userCountry){
 
 				deathsElement.innerHTML = cnt.TotalDeaths || 0;
 				newDeathsElement.innerHTML = `+${cnt.NewDeaths || 0}`;
-				// console.log(((cnt.TotalRecovered / cnt.TotalConfirmed) * 100).toFixed(2));
 				recoveryElement.innerHTML = `${((cnt.TotalRecovered / cnt.TotalConfirmed) * 100).toFixed(2) || 0}%`;
 				fatalityElement.innerHTML = `${((cnt.TotalDeaths  / cnt.TotalConfirmed) * 100).toFixed(2) || 0}%`;
 			}
@@ -72,4 +61,3 @@ function fetchData(userCountry){
 	})
 }
 fetchData(userCountry);
-
