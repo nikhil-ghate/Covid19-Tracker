@@ -357,6 +357,6 @@ footer{
         height: 200px;
     }
     .country-list ul li{
-        padding: 5px;
+        padding: 10px 5px;
     }
 }
