@@ -52,7 +52,6 @@ function fetchData(userCountry){
 				recoveryElement.innerHTML = `${((cnt.TotalRecovered / cnt.TotalConfirmed) * 100).toFixed(2) || 0}%`;
 				fatalityElement.innerHTML = `${((cnt.TotalDeaths  / cnt.TotalConfirmed) * 100).toFixed(2) || 0}%`;
 				NewActiveElement.innerHTML = `${(100 - ((cnt.TotalRecovered / cnt.TotalConfirmed) * 100).toFixed(2) - ((cnt.TotalDeaths  / cnt.TotalConfirmed) * 100).toFixed(2))}%`;
-				console.log(100 - ((cnt.TotalRecovered / cnt.TotalConfirmed) * 100).toFixed(2) - ((cnt.TotalDeaths  / cnt.TotalConfirmed) * 100).toFixed(2));
 			}
 		})
 
