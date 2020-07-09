@@ -62,6 +62,7 @@ header{
 }
 .logo img{
     width: 60px;
+    animation: gocorona 3s linear infinite;
 }
 
 @keyframes gocorona{
@@ -69,16 +70,13 @@ header{
     100% { transform: rotate(360deg);}
 }
 .logo img:hover{
-    animation: gocorona 3s linear infinite;
+    animation: gocorona 2s linear infinite;
 }
 .logo p{
     font-weight: bold;
     color: #6d4d80;
 }
 /* -------- NAV -------- */
-nav{
-
-}
 
 nav ul{
     display: flex;
@@ -107,15 +105,14 @@ main{
 .stats{
     width: 100%;
     height: 675px;
-    background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)) ,url('../img/bg.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)) ,url('../img/bg.jpg');
     background-size: cover;
 }
 .stats p{
-    color: pink;
-    padding-top: 5px;
+    color: #fff;
     display: flex;
     justify-content: flex-end;
-    padding: 15px;
+    padding: 5px;
 }
 /* -------- LATEST REPORT -------- */
 .latest-report{
@@ -133,20 +130,16 @@ main{
     width: 100%;
     margin: 0 auto;
     padding-top: 50px;
-    /* justify-content: center; */
 }
 .country{
     height: 150px;
-    width: 200px;
+    width: 300px;
 }
 
 .total-cases, .recovered, .deaths, .active, .recovery, .fatality{
     height: 150px;
-    width: 150px;
+    width: 170px;
     padding-bottom: 20px;
-}
-
-.total-cases, .recovered, .deaths, .active, .recovery, .fatality{
     place-self: center;
 }
 
@@ -164,10 +157,7 @@ main{
     font-size: 1.3em;
 }
 
-.total-cases{
-    /* justify-content: center; */
 
-}
 .total-cases .value{
     font-size: 2em;
     font-weight: bold;
@@ -204,7 +194,6 @@ main{
 .fatality {
     grid-row: 3;
 }
-
 
 /* -------- SEARCH COUNTRY -------- */
 
