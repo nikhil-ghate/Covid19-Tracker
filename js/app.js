@@ -42,7 +42,8 @@ function fetchData(userCountry){
 				
 				totalCasesElement.innerHTML = cnt.TotalConfirmed || 0;
 				newCasesElement.innerHTML = `+${cnt.NewConfirmed || 0}`;
-				activeElement.innerHTML = `${cnt.TotalConfirmed - cnt.TotalRecovered - cnt.TotalDeaths || 0}`;
+				const totalActive = cnt.TotalConfirmed - cnt.TotalRecovered - cnt.TotalDeaths;
+				activeElement.innerHTML = `${totalActive || 0}`;
 				
 				recoverdElement.innerHTML = cnt.TotalRecovered || 0;
 				newRecoverdElement.innerHTML = `+${cnt.NewRecovered || 0}`;
@@ -51,7 +52,7 @@ function fetchData(userCountry){
 				newDeathsElement.innerHTML = `+${cnt.NewDeaths || 0}`;
 				recoveryElement.innerHTML = `${((cnt.TotalRecovered / cnt.TotalConfirmed) * 100).toFixed(2) || 0}%`;
 				fatalityElement.innerHTML = `${((cnt.TotalDeaths  / cnt.TotalConfirmed) * 100).toFixed(2) || 0}%`;
-				NewActiveElement.innerHTML = `${(100 - ((cnt.TotalRecovered / cnt.TotalConfirmed) * 100).toFixed(2) - ((cnt.TotalDeaths  / cnt.TotalConfirmed) * 100).toFixed(2))}%`;
+				NewActiveElement.innerHTML = `${((totalActive  / cnt.TotalConfirmed) * 100).toFixed(2) || 0}%`;
 			}
 		})
 
