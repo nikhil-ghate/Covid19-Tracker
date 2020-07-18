@@ -41,18 +41,18 @@ function fetchData(userCountry){
 				updateDate.innerHTML = `Last Updated: ${event.toString()}`;
 				
 				totalCasesElement.innerHTML = cnt.TotalConfirmed || 0;
-				newCasesElement.innerHTML = `+${cnt.NewConfirmed || 0}`;
+				newCasesElement.innerHTML = `(▲${cnt.NewConfirmed || 0})`;
 				const totalActive = cnt.TotalConfirmed - cnt.TotalRecovered - cnt.TotalDeaths;
 				activeElement.innerHTML = `${totalActive || 0}`;
 				
 				recoverdElement.innerHTML = cnt.TotalRecovered || 0;
-				newRecoverdElement.innerHTML = `+${cnt.NewRecovered || 0}`;
+				newRecoverdElement.innerHTML = `(▲${cnt.NewRecovered || 0})`;
 
 				deathsElement.innerHTML = cnt.TotalDeaths || 0;
-				newDeathsElement.innerHTML = `+${cnt.NewDeaths || 0}`;
+				newDeathsElement.innerHTML = `(▲${cnt.NewDeaths || 0})`;
 				recoveryElement.innerHTML = `${((cnt.TotalRecovered / cnt.TotalConfirmed) * 100).toFixed(2) || 0}%`;
 				fatalityElement.innerHTML = `${((cnt.TotalDeaths  / cnt.TotalConfirmed) * 100).toFixed(2) || 0}%`;
-				NewActiveElement.innerHTML = `${((totalActive  / cnt.TotalConfirmed) * 100).toFixed(2) || 0}%`;
+				NewActiveElement.innerHTML = `(${((totalActive  / cnt.TotalConfirmed) * 100).toFixed(2) || 0}%)`;
 			}
 		})
 
